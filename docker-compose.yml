@@ -21,4 +21,4 @@ services:
         condition: service_healthy
     volumes:
       - ./:/app
-    command: ["sh", "-c", "cd /app && python src/main.py"]
+    command: ["sh", "-c", "cd /app && python -u src/main.py"]

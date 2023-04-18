@@ -1,4 +1,8 @@
+import os
+import logging
 from ortools.constraint_solver import routing_enums_pb2, pywrapcp
+
+logger = logging.getLogger(__name__)
 
 
 def create_data_model(locations):
@@ -50,6 +54,12 @@ def optimize_tsp(locations):
 
     # Solve the problem
     solution = routing.SolveWithParameters(search_parameters)
+
+    logger.debug(
+        f"Locations of the problem: {locations}"
+        + os.linesep
+        + f"The solution:{solution}"
+    )
 
     # Extract the optimized tour
     tour = []

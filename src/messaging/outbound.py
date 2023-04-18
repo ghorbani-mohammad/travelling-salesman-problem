@@ -1,6 +1,10 @@
 import pika
+import logging
 
 from src.config import RABBITMQ_HOST, OUTBOUND_QUEUE
+
+logger = logging.getLogger(__name__)
+
 
 # Define the RabbitMQ connection parameters
 params = pika.ConnectionParameters(host=RABBITMQ_HOST)
@@ -15,8 +19,7 @@ def callback(channel, method, _properties, body):
     # Receive message from outbound queue
     tour = body.decode()
 
-    # Print the tour
-    print("Optimized Tour:", tour)
+    logger.debug(f"Optimized Tour: {tour}")
 
     # Acknowledge message received
     channel.basic_ack(delivery_tag=method.delivery_tag)
@@ -25,5 +28,5 @@ def callback(channel, method, _properties, body):
 # Start consuming from outbound queue
 channel.basic_consume(queue=OUTBOUND_QUEUE, on_message_callback=callback)
 
-print("Waiting for messages...")
+logger.debug("Waiting for messages in outbound")
 channel.start_consuming()
