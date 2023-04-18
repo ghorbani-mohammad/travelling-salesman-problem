@@ -1,8 +1,7 @@
 import json
 
 from src.solver.tsp_solver import optimize_tsp
-
-OUTBOUND_QUEUE = "tsp.outbound"
+from src.config import OUTBOUND_QUEUE
 
 
 # Define a function to handle incoming messages

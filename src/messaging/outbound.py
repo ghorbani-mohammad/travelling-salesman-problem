@@ -1,9 +1,9 @@
 import pika
 
-OUTBOUND_QUEUE = "tsp.outbound"
+from src.config import RABBITMQ_HOST, OUTBOUND_QUEUE
 
 # Define the RabbitMQ connection parameters
-params = pika.ConnectionParameters(host="rabbitmq")
+params = pika.ConnectionParameters(host=RABBITMQ_HOST)
 
 # Connect to RabbitMQ and set up the inbound and outbound queues
 connection = pika.BlockingConnection(params)
