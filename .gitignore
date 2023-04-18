@@ -1,5 +1,9 @@
-*.pyc
 .venv
 .vscode
 .env
-app.log
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.log
