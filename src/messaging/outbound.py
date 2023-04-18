@@ -11,7 +11,7 @@ channel = connection.channel()
 channel.queue_declare(queue=OUTBOUND_QUEUE)
 
 
-def callback(_ch, method, _properties, body):
+def callback(channel, method, _properties, body):
     # Receive message from outbound queue
     tour = body.decode()
 
