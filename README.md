@@ -35,4 +35,18 @@ ci
  ┗ test-python.sh
 ```
 
+
+
+### Notes
+- For this mini project, I've used rabbitmq as a message broker.
+- I have used docker-compose fo simplify the deploy and running of the project.
+- I have add four unit tests for basic functions that I had.
+- For easily run the project and check the output I've provided an example.sh file which you
+can change the input and see the result.
+- I have used black formatter and pylint to improve the quality of the code.
+
 ### Design
+- input messages should be like this, an array of locations:
+  `[[0,0], [1,2]]`
+- output messages would be like this:
+  `{"locations": [[0, 0], [1, 1]], "path": [[0, 0], [1, 1], [0, 0]]}`

@@ -14,6 +14,9 @@ test: test-python
 format-python:
 	ci/format-python.sh
 
+lint-python:
+	@MYPYPATH=social ci/lint-python.sh
+
 .PHONY: test-python
 test-python:
 	ci/test-python.sh

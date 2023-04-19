@@ -24,9 +24,11 @@ message = json.dumps(payload)
 # Publish the message to the inbound queue
 channel.basic_publish(exchange="", routing_key=INBOUND_QUEUE, body=message)
 
+
 # Define the callback function for consuming messages
-def callback(ch, method, properties, body):
+def callback(_ch, _method, _properties, body):
     print("Received message:", body.decode())
+
 
 # Start consuming messages from the output queue
 channel.basic_consume(queue=OUTBOUND_QUEUE, on_message_callback=callback, auto_ack=True)

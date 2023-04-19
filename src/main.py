@@ -27,7 +27,9 @@ def on_message_callback(_channel, _method, _properties, message_body):
     inbound_result = process_inbound_message(message_body)
     outbound_result = process_outbound_message(inbound_result)
     logger.debug("Processed message: %s", outbound_result)
-    outbound_channel.basic_publish(exchange="", routing_key=OUTBOUND_QUEUE, body=outbound_result)
+    outbound_channel.basic_publish(
+        exchange="", routing_key=OUTBOUND_QUEUE, body=outbound_result
+    )
 
 
 # Set up a consumer for the inbound queue
