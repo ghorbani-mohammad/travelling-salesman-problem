@@ -52,7 +52,7 @@ can change the input and see the result.
 - So we have message broker and app containers.
 - The app will subscribe to the inbound channel and processes incoming messages.
 - Result messages will be published to the outbound channel. 
-- input messages should be like this, an array of locations:
+- Input messages should be like this, an array of locations:
   `[[0,0], [1,2]]`
-- output messages would be like this:
+- Output messages would be like this:
   `{"locations": [[0, 0], [1, 1]], "path": [[0, 0], [1, 1], [0, 0]]}`
