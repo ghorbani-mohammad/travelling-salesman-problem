@@ -56,9 +56,10 @@ def optimize_tsp(locations):
     solution = routing.SolveWithParameters(search_parameters)
 
     logger.debug(
-        f"Locations of the problem: {locations}"
-        + os.linesep
-        + f"The solution:{solution}"
+        "Locations of the problem: %s %sThe solution: %s",
+        locations,
+        os.linesep,
+        solution,
     )
 
     # Extract the optimized tour

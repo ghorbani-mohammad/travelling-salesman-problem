@@ -1,6 +1,5 @@
 import unittest
 from src.solver.tsp_solver import optimize_tsp
-from src.utils.distance import euclidean_distance
 
 
 class TestTspSolver(unittest.TestCase):
