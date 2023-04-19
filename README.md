@@ -36,7 +36,7 @@ ci
 ```
 
 ### Notes
-- Before starting don't forget to add a .env file.
+- Before starting don't forget to add a .env file. (You can just use the .env_example)
 - For this mini project, I've used rabbitmq as a message broker.
 - I have used docker-compose fo simplify the deploy and running of the project.
 - I have add four unit tests for basic functions that I had.
