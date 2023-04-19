@@ -7,10 +7,13 @@ format: format-python
 .PHONY: lint
 lint: lint-python
 
+.PHONY: test
+test: test-python
+
 .PHONY: format-python
 format-python:
 	ci/format-python.sh
 
-.PHONY: lint-python
-lint-python:
-	@MYPYPATH=social ci/lint-python.sh
+.PHONY: test-python
+test-python:
+	ci/test-python.sh
