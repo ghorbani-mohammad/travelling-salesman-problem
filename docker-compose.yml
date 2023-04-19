@@ -14,8 +14,6 @@ services:
   app:
     build: .
     container_name: app
-    ports:
-      - 8000:8000
     depends_on:
       rabbitmq:
         condition: service_healthy
