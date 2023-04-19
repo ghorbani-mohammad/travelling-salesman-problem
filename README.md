@@ -35,17 +35,23 @@ ci
  ┗ test-python.sh
 ```
 
-
-
 ### Notes
+- Before starting don't forget to add a .env file.
 - For this mini project, I've used rabbitmq as a message broker.
 - I have used docker-compose fo simplify the deploy and running of the project.
 - I have add four unit tests for basic functions that I had.
 - For easily run the project and check the output I've provided an example.sh file which you
 can change the input and see the result.
 - I have used black formatter and pylint to improve the quality of the code.
+- You can change the level of logging in the .env file and see the logs in the app.log file.
+- You can run tests using `make test`.
+- You can run formatter using `make format`.
+- You can run linter using `make lint`.
 
 ### Design
+- So we have message broker and app containers.
+- The app will subscribe to the inbound channel and processes incoming messages.
+- Result messages will be published to the outbound channel. 
 - input messages should be like this, an array of locations:
   `[[0,0], [1,2]]`
 - output messages would be like this:
